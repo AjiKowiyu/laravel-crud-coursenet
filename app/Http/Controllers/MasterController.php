@@ -22,4 +22,10 @@ class MasterController extends Controller
     {
         return view('master.cabang.index');
     }
+
+
+    public function menuresto()
+    {
+        return view('master.menuresto.index');
+    }
 }
