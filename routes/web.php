@@ -26,3 +26,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/master', [MasterController::class, 'index'])->name('master');
+Route::get('/master/cabang', [MasterController::class, 'cabang'])->name('master-cabang');
