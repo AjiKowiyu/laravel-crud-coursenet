@@ -3,7 +3,7 @@
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link {{ (Request::segment(2) == 'cabang') ? 'active bg-primary text-white' : null }}"
+        <a class="nav-link {{ (Request::segment(2) == 'cabang') ? 'active bg-primary text-white' : null }}" 
         href="{{ route('master-cabang') }}">Cabang</a>
     </li>
     <li class="nav-item">

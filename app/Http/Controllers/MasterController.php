@@ -24,6 +24,12 @@ class MasterController extends Controller
     }
 
 
+    public function cabang_tambah()
+    {
+        return view('master.cabang.tambah');
+    }
+
+
     public function menuresto()
     {
         return view('master.menuresto.index');
