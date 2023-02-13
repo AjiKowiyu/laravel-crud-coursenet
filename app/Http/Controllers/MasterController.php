@@ -48,7 +48,7 @@ class MasterController extends Controller
                 echo 'Gagal bos';
             }
         } catch (\Throwable $th) {
-            print_r($th->getMessage);
+            print_r($th->getMessage());
         }
         
     }
