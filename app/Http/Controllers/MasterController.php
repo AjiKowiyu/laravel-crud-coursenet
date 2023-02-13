@@ -43,12 +43,12 @@ class MasterController extends Controller
                 'created_date'  => date('Y-m-d H:i:s'),
             ]);
             if ($insert) {
-                echo 'Berhasil tambah cabang restoran baru';
+                return redirect()->route('master-cabang')->with('success', 'Berhasil tambah cabang restoran baru!');
             } else {
-                echo 'Gagal bos';
+                return redirect()->route('master-cabang-tambah')->with('warning', 'Gagal!');
             }
         } catch (\Throwable $th) {
-            print_r($th->getMessage());
+            return redirect()->route('master-cabang-tambah')->with('danger', $th->getMessage());
         }
         
     }
