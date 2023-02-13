@@ -21,7 +21,8 @@ class MasterController extends Controller
 
     public function cabang()
     {
-        return view('master.cabang.index');
+        $cabang = DB::table('m_cabang')->get();
+        return view('master.cabang.index', compact('cabang'));
     }
 
 
