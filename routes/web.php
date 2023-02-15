@@ -29,4 +29,6 @@ Route::get('/master', [MasterController::class, 'index'])->name('master');
 Route::get('/master/cabang', [MasterController::class, 'cabang'])->name('master-cabang');
 Route::get('/master/cabang/tambah', [MasterController::class, 'cabang_tambah'])->name('master-cabang-tambah');
 Route::post('/master/cabang/simpan', [MasterController::class, 'cabang_simpan'])->name('master-cabang-simpan');
+Route::get('/master/cabang/edit/{kode}', [MasterController::class, 'cabang_edit'])->where('kode', '[A-Za-z]+')->name('master-cabang-edit');
+Route::post('/master/cabang/update/{kode}', [MasterController::class, 'cabang_update'])->where('kode', '[A-Za-z]+')->name('master-cabang-update');
 Route::get('/master/menuresto', [MasterController::class, 'menuresto'])->name('master-menuresto');

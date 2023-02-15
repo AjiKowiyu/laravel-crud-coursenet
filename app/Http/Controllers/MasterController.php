@@ -69,6 +69,25 @@ class MasterController extends Controller
     }
 
 
+    public function cabang_edit($kode)
+    {
+        $cabang = DB::table('m_cabang')->where('kode_cabang', $kode)->get()->first();
+        return view('master.cabang.edit', compact('cabang'));
+    }
+
+
+    public function cabang_update($kode, Request $request)
+    {
+        $update = DB::table('m_cabang')->where('kode_cabang', $kode)->update([
+            'nama_cabang'   => $request->input('form_nama_cabang'),
+            'no_telp'       => $request->input('form_notelp_cabang'),
+            'alamat'        => $request->input('form_alamat_cabang'),
+            'updated_date'  => date('Y-m-d H:i:s'),
+        ]);
+        if ($update) {
+            return redirect()->route('master-cabang')->with('success', 'Berhasil update restoran '.$kode.'!');
+        }
+    }
 
     public function menuresto()
     {
