@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\TransaksiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,8 @@ Route::post('/master/cabang/simpan', [MasterController::class, 'cabang_simpan'])
 Route::get('/master/cabang/edit/{kode}', [MasterController::class, 'cabang_edit'])->where('kode', '[A-Za-z]+')->name('master-cabang-edit');
 Route::post('/master/cabang/update/{kode}', [MasterController::class, 'cabang_update'])->where('kode', '[A-Za-z]+')->name('master-cabang-update');
 Route::get('/master/menuresto', [MasterController::class, 'menuresto'])->name('master-menuresto');
+
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+Route::get('/transaksi/sales', [TransaksiController::class, 'sales'])->name('transaksi-sales');
+Route::get('/transaksi/stock', [TransaksiController::class, 'stock'])->name('transaksi-stock');
+Route::get('/transaksi/stock/tambah', [TransaksiController::class, 'stock_tambah'])->name('transaksi-stock-tambah');

@@ -13,6 +13,12 @@
                     Master Data
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ (Request::segment(1) == 'transaksi') ? 'active' : null }}" href="{{ route('transaksi') }}">
+                    <i class="fa-solid fa-fw fa-database"></i>
+                    Transaksi
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
