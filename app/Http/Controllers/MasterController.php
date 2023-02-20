@@ -81,13 +81,11 @@ class MasterController extends Controller
     public function cabang_update($kode, Request $request)
     {
         $aturan = [
-            'form_kode_cabang' => 'required|unique:m_cabang,kode_cabang|min:3',
             'form_nama_cabang' => 'required|min:5',
             'form_notelp_cabang' => 'numeric',
             'form_alamat_cabang' => 'required',
         ];
         $pesan = [
-            'form_kode_cabang.unique' => 'Kode Cabang sudah terdaftar, silakan pakai kode yang lain !!',
             'form_notelp_cabang.numeric' => 'Nomor telpon harus angka !!',
         ];
         $validator = Validator::make($request->all(), $aturan, $pesan);
