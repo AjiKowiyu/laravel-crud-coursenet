@@ -14,19 +14,26 @@
                     <th scope="col">Cabang</th>
                     <th scope="col">Kode Menu</th>
                     <th scope="col">Nama Menu</th>
+                    <th scope="col">Harga</th>
                     <th scope="col">Jumlah</th>
                     <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
+                @php
+                    $i = 1;
+                @endphp
+                @foreach ($stok as $s)
+                    <tr>
+                        <th scope="row">{{ $i++ }}</th>
+                        <td>{{ $s->kode_cabang }}</td>
+                        <td>{{ $s->kode_menu }}</td>
+                        <td>{{ $s->nama_menu }} {{ $s->varian }}</td>
+                        <td>{{ $s->harga_jual }}</td>
+                        <td>{{ $s->qty }}</td>
+                        <td>{{ $s->kode_status }} ({{ $s->nama_status }})</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

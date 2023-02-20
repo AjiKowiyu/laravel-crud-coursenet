@@ -38,3 +38,4 @@ Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi
 Route::get('/transaksi/sales', [TransaksiController::class, 'sales'])->name('transaksi-sales');
 Route::get('/transaksi/stock', [TransaksiController::class, 'stock'])->name('transaksi-stock');
 Route::get('/transaksi/stock/tambah', [TransaksiController::class, 'stock_tambah'])->name('transaksi-stock-tambah');
+Route::post('/transaksi/stock/simpan', [TransaksiController::class, 'stock_simpan'])->name('transaksi-stock-simpan');

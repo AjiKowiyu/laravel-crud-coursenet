@@ -15,7 +15,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ (Request::segment(1) == 'transaksi') ? 'active' : null }}" href="{{ route('transaksi') }}">
-                    <i class="fa-solid fa-fw fa-database"></i>
+                    <i class="fa-solid fa-fw fa-right-left"></i>
                     Transaksi
                 </a>
             </li>
