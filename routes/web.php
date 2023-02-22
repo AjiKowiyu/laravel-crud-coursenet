@@ -35,7 +35,10 @@ Route::post('/master/cabang/update/{kode}', [MasterController::class, 'cabang_up
 Route::get('/master/menuresto', [MasterController::class, 'menuresto'])->name('master-menuresto');
 
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+
 Route::get('/transaksi/sales', [TransaksiController::class, 'sales'])->name('transaksi-sales');
+Route::post('/transaksi/sales/jual', [TransaksiController::class, 'sales_jual'])->name('transaksi-sales-jual');
+
 Route::get('/transaksi/stock', [TransaksiController::class, 'stock'])->name('transaksi-stock');
 Route::get('/transaksi/stock/tambah', [TransaksiController::class, 'stock_tambah'])->name('transaksi-stock-tambah');
 Route::post('/transaksi/stock/simpan', [TransaksiController::class, 'stock_simpan'])->name('transaksi-stock-simpan');

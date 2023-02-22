@@ -25,9 +25,19 @@ class TransaksiController extends Controller
 
     public function sales()
     {
-        # code...
+        $data = [
+            'kode_cabang' => DB::table('m_cabang')->get(),
+            'kode_menu' => DB::table('m_menu')->get(),
+        ];
+        return view('transaksi/sales/index', compact('data'));
     }
 
+
+
+    public function sales_jual(Request $request)
+    {
+        echo 'barang sudah terjual';
+    }
 
 
     public function stock()
