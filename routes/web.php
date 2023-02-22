@@ -36,8 +36,8 @@ Route::get('/master/menuresto', [MasterController::class, 'menuresto'])->name('m
 
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
 
-Route::get('/transaksi/sales', [TransaksiController::class, 'sales'])->name('transaksi-sales');
-Route::post('/transaksi/sales/jual', [TransaksiController::class, 'sales_jual'])->name('transaksi-sales-jual');
+Route::get('/transaksi/sales/{kode_cabang?}', [TransaksiController::class, 'sales'])->name('transaksi-sales');
+Route::post('/transaksi/sales/jual/{kode_cabang}', [TransaksiController::class, 'sales_jual'])->name('transaksi-sales-jual');
 
 Route::get('/transaksi/stock', [TransaksiController::class, 'stock'])->name('transaksi-stock');
 Route::get('/transaksi/stock/tambah', [TransaksiController::class, 'stock_tambah'])->name('transaksi-stock-tambah');
