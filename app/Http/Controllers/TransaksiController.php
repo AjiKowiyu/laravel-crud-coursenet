@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use DB;
+use App\Models\TransaksiModel;
 
 class TransaksiController extends Controller
 {
@@ -31,17 +32,8 @@ class TransaksiController extends Controller
 
     public function stock()
     {
-        $stok = DB::select(
-            "SELECT
-                sa.id, sa.kode_cabang, c.nama_cabang,
-                sa.kode_menu, m.nama_menu, m.varian, m.harga_jual,
-                sa.qty,
-                sa.kode_status, s.nama_status
-            FROM stok_awal as sa
-            JOIN m_cabang as c			ON c.kode_cabang = sa.kode_cabang
-            JOIN m_menu as m 				ON m.kode_menu = sa.kode_menu
-            JOIN m_stok_status as s ON s.kode_status = sa.kode_status"
-        );
+        $transaksimodel = new TransaksiModel();
+        $stok = $transaksimodel->ambil_semua_stok();
         return view('transaksi/stock/index', compact('stok'));
     }
 
